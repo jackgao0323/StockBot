@@ -8,6 +8,8 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import re
 
+from stock_list import stock
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
@@ -37,7 +39,7 @@ def handle_message(event):
     message = event.message.text
     if re.match('包子',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage('包子臭臭'))
-        
+
     # Send To Line
     # reply = TextSendMessage(text=f"{get_message}")
     reply = TextSendMessage(text=f"蝦蝦搞好帥")
