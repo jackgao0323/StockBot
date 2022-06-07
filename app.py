@@ -7,11 +7,13 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.environ.get("CHANNEL_SECRET"))
 
+line_bot_api.push_message(os.environ.get("USER_ID"), TextSendMessage(text='你可以開始了'))
 
 @app.route("/", methods=["GET", "POST"])
 def callback():
