@@ -7,7 +7,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import re
-
+from bs4 import BeautifulSoup
 # from stock_list import stock
 
 app = Flask(__name__)
