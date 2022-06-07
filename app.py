@@ -59,8 +59,5 @@ def handle_message(event):
     if re.match('包子',message):
         # line_bot_api.reply_message(event.reply_token, TextSendMessage('包子臭臭'))
         line_bot_api.reply_message(event.reply_token, TextSendMessage(stock()))
-
-    # Send To Line
-    # reply = TextSendMessage(text=f"{get_message}")
-    reply = TextSendMessage(text=f"蝦蝦搞好帥")
-    line_bot_api.reply_message(event.reply_token, reply)
+    elif re.match('蝦蝦搞', message):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=f"蝦蝦搞好帥"))
